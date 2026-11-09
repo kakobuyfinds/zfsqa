@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#192c9c">
+  <title>Sugargoo spreadsheet – Produktlinks, Größen und QC prüfen</title>
+  <meta name="description" content="Deutschsprachiger Leitfaden zum Sugargoo spreadsheet. Finde zehn Kategorien auf Hipobuyfind und prüfe Produktlinks, Größen, QC-Fotos und Versandkosten.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="Sugargoo spreadsheet – Produktlinks, Größen und QC prüfen">
+  <meta property="og:description" content="Zehn Kategorien auf Hipobuyfind und ein Einkaufsleitfaden für Produktlinks, Maße, Lagerfotos und Gesamtkosten.">
+  <meta property="og:image" content="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/5/3/5324c8eNike-CN8490-002_1.jpg?rnd=20200526195200&amp;tr=w-640">
+  <meta property="og:image:alt" content="Schwarzer Nike Air Max 90 mit weißem Swoosh in Seitenansicht">
+  <!-- Recherchegrundlage: Zehn Treffer der verfügbaren Websuche, ohne bestätigte
+       Google-Rangfolge. Die Google-Suchergebnisse waren nicht direkt abrufbar.
+       Quellen: sugargo.net, sugargootab.com, sugargooo.com, suugargoo.com,
+       sugargoox.com/en/spreadsheet, sugargoo.org, spreadsheet-sugargoo.com,
+       rep.tools/guides/sugargoo-spreadsheet, sheetsugargoo.com, sugagoo.com.
+       Suchthemen: Kategorien, Produktquellen, Größen, Lagerfotos und Versand.
+       Die Veröffentlichungsadresse wurde nicht vorgegeben. -->
+  <style>
+    :root {
+      color-scheme: light;
+      --blue: #192c9c;
+      --ink: #171c30;
+      --muted: #454c65;
+      --lime: #e6fb71;
+      --paper: #f6f7ff;
+      --rule: #c8cde9;
+      --white: #fff;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.6 system-ui, sans-serif; }
+    a { color: inherit; text-underline-offset: .18em; }
+    a:focus-visible, summary:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+    img { display: block; width: 100%; height: auto; }
+    figure, h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { line-height: 1.14; overflow-wrap: anywhere; }
+    h1 { font-size: clamp(2.5rem, 6.7vw, 5.5rem); letter-spacing: -.065em; }
+    h2 { font-size: clamp(1.65rem, 3.4vw, 2.6rem); letter-spacing: -.035em; }
+    h3 { font-size: 1.24rem; }
+    .wrap { width: min(72rem, calc(100% - 2rem)); margin-inline: auto; }
+    .mast { background: var(--blue); color: var(--white); }
+    .mast .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .35rem 1rem; padding-block: .85rem; }
+    .mast a { font-weight: 800; }
+    .label { font-size: .75rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .index { padding-block: 1rem; }
+    .index .label { margin-bottom: .55rem; color: var(--blue); }
+    .index ul { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .4rem; margin: 0; padding: 0; list-style: none; }
+    .index a { display: flex; align-items: center; min-height: 2.75rem; height: 100%; padding: .35rem .65rem; background: var(--white); border: 1px solid var(--rule); font-size: .88rem; font-weight: 700; text-decoration: none; overflow-wrap: anywhere; }
+    .index a:hover { border-color: var(--blue); text-decoration: underline; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(1rem, 3vw, 3rem); align-items: center; background: var(--blue); color: var(--white); padding: clamp(1.2rem, 4.6vw, 3.6rem); }
+    .hero .label { margin-bottom: .7rem; color: var(--lime); }
+    .hero .intro { max-width: 52ch; margin-top: 1.15rem; }
+    .hero figure { background: var(--white); color: var(--ink); }
+    .hero img { aspect-ratio: 4 / 3; object-fit: contain; background: #fdfdfd; }
+    .cta { display: inline-flex; align-items: center; min-height: 2.75rem; margin-top: 1.25rem; padding: .45rem .85rem; background: var(--lime); color: var(--ink); font-weight: 800; }
+    .block { margin-block: clamp(2rem, 5vw, 4rem); }
+    .block h2 { margin-bottom: .9rem; }
+    .checklist { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+    article { background: var(--white); padding: clamp(.9rem, 2vw, 1.5rem); }
+    article .label { display: inline-block; margin-bottom: .65rem; padding: .05rem .4rem; background: var(--lime); }
+    article p { margin-top: .65rem; color: var(--muted); }
+    .gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .65rem; margin-top: 1rem; }
+    .gallery figure { background: var(--white); border: 1px solid var(--rule); }
+    .gallery img { aspect-ratio: 1; object-fit: contain; background: #fafafa; }
+    figcaption { padding: .5rem .65rem; font-size: .85rem; }
+    .faq { max-width: 52rem; }
+    details { padding: .65rem .9rem; background: var(--white); border-bottom: 1px solid var(--rule); }
+    summary { min-height: 2.75rem; padding-block: .45rem; cursor: pointer; color: var(--blue); font-weight: 750; }
+    details p { padding-bottom: .35rem; }
+    footer { border-top: 1px solid var(--rule); padding-block: 1.3rem; color: var(--muted); font-size: .9rem; }
+    @media (max-width: 52rem) {
+      .index ul, .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero, .checklist { grid-template-columns: 1fr; }
+      .hero figure { max-width: 31rem; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Sugargoo spreadsheet",
+        "inLanguage": "de",
+        "description": "Deutschsprachiger Leitfaden zum Sugargoo spreadsheet. Finde zehn Kategorien auf Hipobuyfind und prüfe Produktlinks, Größen, QC-Fotos und Versandkosten."
+      },
+      {
+        "@type": "FAQPage",
+        "inLanguage": "de",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Was ist ein Sugargoo spreadsheet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ein Sugargoo spreadsheet ist eine Übersicht mit Produktlinks, häufig nach Kategorien sortiert. Verwende sie für deine Vorauswahl und prüfe die gewünschte Variante im ursprünglichen Angebot."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wohin führen die Kategorien auf dieser Seite?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Die zehn Kategorien führen zu den jeweiligen Übersichten auf Hipobuyfind. Dieser Leitfaden ist redaktionell unabhängig von Sugargoo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was kann ich auf QC-Fotos erkennen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Auf passenden Lagerfotos erkennst du sichtbare Details wie Nähte, Aufdrucke oder Abweichungen bei der bestellten Variante. Für Maße hilft ein Foto mit Maßband. Fotos allein belegen keine Echtheit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie schätze ich die Gesamtkosten einer Bestellung?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rechne Artikelpreis, möglichen Inlandsversand, Servicegebühren und internationalen Versand zusammen. Prüfe mögliche Einfuhrkosten anhand der Regeln für dein Zielland und der konkreten Sendung."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/zfsqa/">
+</head>
+<body>
+  <header class="mast">
+    <div class="wrap">
+      <a href="https://www.hipobuyfind.com">www.hipobuyfind.com</a>
+      <p class="label">Kaufleitfaden auf Deutsch</p>
+    </div>
+  </header>
+  <main class="wrap">
+    <nav class="index" aria-label="Produktkategorien auf Hipobuyfind">
+      <p class="label">Kategorien auf Hipobuyfind</p>
+      <ul>
+        <li><a href="https://hipobuyfind.com/category-911-Shoes.html">Schuhe</a></li>
+        <li><a href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html">Hoodies &amp; Pullover</a></li>
+        <li><a href="https://hipobuyfind.com/category-913-T-Shirts.html">T-Shirts</a></li>
+        <li><a href="https://hipobuyfind.com/category-914-Jackets.html">Jacken</a></li>
+        <li><a href="https://hipobuyfind.com/category-915-Pants%2FShorts.html">Hosen &amp; Shorts</a></li>
+        <li><a href="https://hipobuyfind.com/category-916-Headwear.html">Caps &amp; Mützen</a></li>
+        <li><a href="https://hipobuyfind.com/category-917-Sets.html">Sets</a></li>
+        <li><a href="https://hipobuyfind.com/category-918-underwear%2Funderpants.html">Unterwäsche</a></li>
+        <li><a href="https://hipobuyfind.com/category-919-Jersey.html">Trikots</a></li>
+        <li><a href="https://hipobuyfind.com/category-920-Accessories.html">Accessoires</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero" aria-labelledby="titel">
+      <div>
+        <p class="label">Produkt finden · Angebot prüfen</p>
+        <h1 id="titel">Sugargoo spreadsheet</h1>
+        <p class="intro">Ein Sugargoo spreadsheet hilft dir, Produktlinks für Schuhe, Streetwear und Accessoires zu sammeln. Die Kategorien oben führen zu Hipobuyfind. Hier erfährst du, wie du ähnliche Angebote vergleichst, die passende Größe eingrenzt und vor dem Versand gezielt Lagerfotos prüfst.</p>
+        <a class="cta" href="https://www.hipobuyfind.com">Hipobuyfind öffnen</a>
+      </div>
+      <figure>
+        <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/5/3/5324c8eNike-CN8490-002_1.jpg?rnd=20200526195200&amp;tr=w-640" width="640" height="640" fetchpriority="high" loading="eager" alt="Schwarzer Nike Air Max 90 mit weißem Swoosh in Seitenansicht">
+        <figcaption>Bildbeispiel · Nike Air Max 90</figcaption>
+      </figure>
+    </section>
+
+    <section class="block" aria-labelledby="leitfaden">
+      <h2 id="leitfaden">Drei Prüfungen für deine Vorauswahl</h2>
+      <div class="checklist">
+        <article>
+          <p class="label">01 · Vor dem Kauf</p>
+          <h3>Sugargoo-Produktlinks und Varianten prüfen</h3>
+          <p>Vergleiche Produkt-ID, Verkäufername und Modellbezeichnung mit dem Eintrag im Sugargoo spreadsheet. Öffne die Farbauswahl, prüfe die verfügbare Größe und speichere den ursprünglichen Angebotslink. Bei Sets lohnt sich ein Blick auf den Lieferumfang. Bei Trikots kann ein Aufdruck eine eigene Variante sein.</p>
+          <p>Für eine kurze Vergleichsliste reichen fünf Spalten. Notiere Link, Variante, Maße, Artikelpreis und das Datum deiner Prüfung.</p>
+        </article>
+        <article>
+          <p class="label">02 · Passform &amp; Fotos</p>
+          <h3>Größentabellen und Sugargoo-QC-Fotos lesen</h3>
+          <p>Vergleiche bei Hoodies die Brustweite und Rückenlänge, bei Jacken zusätzlich die Ärmellänge. Miss ein gut passendes Kleidungsstück flach nach und achte darauf, ob die Tabelle eine flache Breite oder den Umfang angibt. Bei Sneakern kläre, ob der Anbieter Fußlänge oder Innenlänge nennt.</p>
+          <p>Bei der Qualitätskontrolle im Lager helfen Detailaufnahmen von Sohlenprofil, Nähten und Größenetikett. Für Hosen sind Bundweite und Innenbeinlänge sinnvolle Messpunkte. Prüfe eine bestellte Farbvariante möglichst auf mehreren Fotos bei ähnlichem Licht.</p>
+        </article>
+        <article>
+          <p class="label">03 · Vor dem Versand</p>
+          <h3>Sugargoo-Versandkosten vergleichen</h3>
+          <p>Trenne den Artikelpreis von Inlandsversand und Servicegebühren. Vergleiche für den internationalen Versand Paketgewicht und Außenmaße. Prüfe in den Bedingungen der Versandlinie, ob nach tatsächlichem Gewicht oder Volumengewicht abgerechnet wird.</p>
+          <p>Vergleiche für Lieferungen nach Deutschland, Österreich oder in die Schweiz jeweils die passende Versandoption und die möglichen Einfuhrkosten für das konkrete Zielland. Aktualisiere deine Schätzung nach dem Verpacken, sobald Maße und Gewicht feststehen.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="bildbeispiele">
+      <h2 id="bildbeispiele">Bildbeispiele für Kleidung und Accessoires</h2>
+      <p>Die Markenfotos veranschaulichen Schnitt, Muster und Details. Sie zeigen keine Lagerprüfung oder Verfügbarkeit auf Hipobuyfind.</p>
+      <div class="gallery">
+        <figure>
+          <img src="https://eu.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-double-face-reversible-workwear-blouson--HUB41WWLD6A1_PM1_Cropped%20view.png?hei=440&amp;wid=440" width="440" height="440" loading="lazy" decoding="async" alt="Model im rot-blau gemusterten Louis-Vuitton-Blouson mit dunklem Kragen">
+          <figcaption>Louis Vuitton · Workwear-Blouson</figcaption>
+        </figure>
+        <figure>
+          <img src="https://media.gucci.com/style/HEXFBFBFB_South_0_160_640x640/1751298339/838745_3HBC4_2600_001_100_0000_Light.jpg" width="640" height="640" loading="lazy" decoding="async" alt="Beige Gucci-Baseballcap mit braunem GG-Muster">
+          <figcaption>Gucci · GG-Canvas-Cap</figcaption>
+        </figure>
+        <figure>
+          <img src="https://assets.hermes.com/is/image/hermesproduct/carre-90-di-sempre-brides-de-gala--001266S%2075-flat-wm-3-0-0-800-800_g.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Quadratisches Hermès-Seidentuch mit schwarzem Rand und goldfarbenem Zaumzeugmotiv">
+          <figcaption>Hermès · Carré 90 Brides de Gala</figcaption>
+        </figure>
+        <figure>
+          <img src="https://assets.christiandior.com/is/image/diorprod/N3523WOMZID301_SBG_E09-1?%24r9x10_raw%24=&amp;bfc=on&amp;crop=0%2C0%2C4000%2C5000&amp;hei=500&amp;qlt=80&amp;wid=460" width="460" height="500" loading="lazy" decoding="async" alt="Detail einer goldfarbenen Dior-Kette mit kristallbesetztem CD-Motiv">
+          <figcaption>Dior · Clair D Lune Halskette</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="block faq" aria-labelledby="fragen">
+      <h2 id="fragen">Häufige Fragen</h2>
+      <details open>
+        <summary>Was ist ein Sugargoo spreadsheet?</summary>
+        <p>Ein Sugargoo spreadsheet ist eine Übersicht mit Produktlinks, häufig nach Kategorien sortiert. Verwende sie für deine Vorauswahl und prüfe die gewünschte Variante im ursprünglichen Angebot.</p>
+      </details>
+      <details>
+        <summary>Wohin führen die Kategorien auf dieser Seite?</summary>
+        <p>Die zehn Kategorien führen zu den jeweiligen Übersichten auf Hipobuyfind. Dieser Leitfaden ist redaktionell unabhängig von Sugargoo.</p>
+      </details>
+      <details>
+        <summary>Was kann ich auf QC-Fotos erkennen?</summary>
+        <p>Auf passenden Lagerfotos erkennst du sichtbare Details wie Nähte, Aufdrucke oder Abweichungen bei der bestellten Variante. Für Maße hilft ein Foto mit Maßband. Fotos allein belegen keine Echtheit.</p>
+      </details>
+      <details>
+        <summary>Wie schätze ich die Gesamtkosten einer Bestellung?</summary>
+        <p>Rechne Artikelpreis, möglichen Inlandsversand, Servicegebühren und internationalen Versand zusammen. Prüfe mögliche Einfuhrkosten anhand der Regeln für dein Zielland und der konkreten Sendung.</p>
+      </details>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">Deutschsprachiger Einkaufsleitfaden · <a href="https://www.hipobuyfind.com">www.hipobuyfind.com</a></div>
+  </footer>
+</body>
+</html>
